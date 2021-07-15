@@ -58,10 +58,58 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // 2. 데이터가 몇개인지
     
     // 행이 선택될때 액션
+    //1. 옵션 -클릭 감지
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Clicked !!  \(indexPath.row)")
+        
+        let storyborad = UIStoryboard.init(name: "Main", bundle: nil)
+        let newsDetail = storyborad.instantiateViewController(identifier: "NewsDetailController") as! NewsDetailController
+        
+        if let news = newsData {
+            let row = news[indexPath.row]
+            
+            if let r = row as? Dictionary<String,Any> {
+                if let imageUrl = r["urlToImage"] as? String {
+                    newsDetail.imageURL = imageUrl
+                }
+                if let desc = r["description"] as? String {
+                    newsDetail.desc = desc
+                }
+            }
+        }
+        // 수동 이동
+        //showDetailViewController(newsDetail, sender: nil)
+        
     }
     
+    
+    //2. 세그웨이 : 부모(가나다)-자식(가나다)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let id = segue.identifier, "NewsDetail" == id {
+            if let controller = segue.destination as? NewsDetailController {
+                
+                if let news = newsData {
+                    //let indexPath = sender as! IndexPath
+                    if let indexPath = tableView.indexPathForSelectedRow {
+                        
+                    
+                        let row = news[indexPath.row]
+                        if let value = row as? Dictionary<String,Any> {
+                            if let imageURL = value["urlToImage"] as? String{
+                                controller.imageURL = imageURL
+                            }
+                            
+                            if let desc = value["description"] as? String {
+                                controller.desc = desc
+                                print(desc)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // 자동 이동
+    }
     
     
     func getNews() {
@@ -84,5 +132,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         task.resume()
     }
+    
+    // 1. 상세 화면 만들기
+    // 2. 값을 보내기 2가지 방식
+    // 2-1. tableview delegate
+    // 2-2. storyboard (segue)
+    // 3. 화면이동 (이동전에 값을 미리 세팅해야한다.)
+    
 }
 

@@ -15,6 +15,7 @@
 		AD2D507C269F120F001D281E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD2D507B269F120F001D281E /* Assets.xcassets */; };
 		AD2D507F269F120F001D281E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD2D507D269F120F001D281E /* LaunchScreen.storyboard */; };
 		AD2D5087269F1912001D281E /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2D5086269F1912001D281E /* MyCell.swift */; };
+		AD39DD1426A0745D00EF537C /* NewsDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD39DD1326A0745D00EF537C /* NewsDetailController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		AD2D507E269F120F001D281E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD2D5080269F120F001D281E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD2D5086269F1912001D281E /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
+		AD39DD1326A0745D00EF537C /* NewsDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				AD2D5080269F120F001D281E /* Info.plist */,
 				AD2D5078269F120E001D281E /* NewsTableView.xcdatamodeld */,
 				AD2D5086269F1912001D281E /* MyCell.swift */,
+				AD39DD1326A0745D00EF537C /* NewsDetailController.swift */,
 			);
 			path = NewsTableView;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 				AD2D5074269F120E001D281E /* ViewController.swift in Sources */,
 				AD2D5087269F1912001D281E /* MyCell.swift in Sources */,
 				AD2D5070269F120E001D281E /* AppDelegate.swift in Sources */,
+				AD39DD1426A0745D00EF537C /* NewsDetailController.swift in Sources */,
 				AD2D507A269F120E001D281E /* NewsTableView.xcdatamodeld in Sources */,
 				AD2D5072269F120E001D281E /* SceneDelegate.swift in Sources */,
 			);
